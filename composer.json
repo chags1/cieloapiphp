@@ -1,0 +1,25 @@
+{
+    "name": "chags/apicielophp",
+    "description": "Pacote PHP para integração com a API RESTful da Cielo.",
+    "type": "library",
+    "require": {
+        "php": ">=8.0",
+        "guzzlehttp/guzzle": "^7.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Chags\\ApiCieloPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Cristiano",
+            "email": "seu-email@example.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "license": "MIT"
+}
+
+
