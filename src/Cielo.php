@@ -2,7 +2,7 @@
 
 namespace ApiCieloPhp;
 
-use ApiCieloPhp\Endpoints\CreatePhysicalSale;
+use apicielophp\Endpoints\CreatePhysicalSale;
 
 class Cielo
 {
