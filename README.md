@@ -8,9 +8,9 @@ Use o Composer para instalar o pacote:
 
 ```bash
 composer require chags/apicielophp
+```
 
-
-
+## segue o exemplo de uma compra  como o cartão
 
 ```php
 require 'vendor/autoload.php';
@@ -47,3 +47,6 @@ try {
 } catch (\Exception $e) {
     echo 'Erro: ' . $e->getMessage();
 }
+
+```
+
