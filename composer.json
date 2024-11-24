@@ -2,6 +2,7 @@
     "name": "chags/apicielophp",
     "description": "Pacote PHP para integração com a API RESTful da Cielo, suportando pagamentos com cartão de crédito, débito e mais",
     "keywords": ["cielo", "api", "rest", "pagamentos", "php"],
+    "version": "1.0.1",
     "type": "library",
     "require": {
         "php": ">=8.0",
