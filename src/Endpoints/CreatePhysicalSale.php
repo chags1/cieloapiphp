@@ -1,37 +1,24 @@
 <?php
 
-namespace Chags\ApiCieloPhp\Endpoints;
+namespace ApiCieloPhp\Endpoints;
 
-use Chags\ApiCieloPhp\ApiCielo;
-use GuzzleHttp\Exception\RequestException;
+use ApiCieloPhp\Config;
 
-class CreatePhysicalSale
+class CreatePhysicalSale extends Config
 {
-    private $apiCielo;
+    protected $endpoint = '1/sales/';
 
-    public function __construct(ApiCielo $apiCielo)
+    /**
+     * Executa a requisição para criar uma venda com cartão.
+     *
+     * @param array $data Dados da requisição no formato esperado pela API.
+     * @return array Resposta da API da Cielo.
+     * @throws \Exception
+     */
+    public function execute(array $data)
     {
-        $this->apiCielo = $apiCielo;
-    }
+        $url = $this->apiUrl . $this->endpoint;
 
-    public function execute(array $paymentData): array
-    {
-        $endpoint = '/1/physicalSales/';
-        $client = $this->apiCielo->getHttpClient();
-        $headers = $this->apiCielo->getHeaders();
-
-        try {
-            $response = $client->post($endpoint, [
-                'headers' => $headers,
-                'json'    => $paymentData,
-            ]);
-
-            return json_decode($response->getBody(), true);
-        } catch (RequestException $e) {
-            if ($e->hasResponse()) {
-                return json_decode($e->getResponse()->getBody(), true);
-            }
-            return ['error' => $e->getMessage()];
-        }
+        return $this->httpPost($url, $data);
     }
 }
