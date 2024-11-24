@@ -10,7 +10,10 @@ Use o Composer para instalar o pacote:
 composer require chags/apicielophp
 ```
 
-## segue o exemplo de uma compra  como o cartão
+## segue o exemplo de uma compra como o cartão
+Os dados são ficticio e deve ser substituido pelos seus dados.
+Quando for colocar em produção mude de 'sandbox' para 'production'
+
 
 ```php
 require 'vendor/autoload.php';
@@ -20,7 +23,7 @@ use apicielophp\Cielo;
 $merchantId = '8937bd5b-9796-494d-9fe5-f76b3e4da633';
 $merchantKey = 'XKGHUBSBKIRXKAVPSKWLVXYCLVJUGTNZLIHPUSYV';
 
-// Instanciar o cliente no ambiente de produção
+// Instanciar o cliente no ambiente de teste
 $cielo = new Cielo($merchantId, $merchantKey, 'sandbox');
 
 // Dados da venda
