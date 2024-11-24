@@ -2,7 +2,7 @@
 
 namespace ApiCieloPhp\Endpoints;
 
-use ApiCieloPhp\Config;
+use apicielophp\Config;
 
 class CreatePhysicalSale extends Config
 {
