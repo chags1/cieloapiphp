@@ -27,7 +27,10 @@ abstract class Config
      */
     protected function httpPost(string $url, array $data)
     {
-        $client = new Client();
+        $client = new \GuzzleHttp\Client([
+            'verify' => false, // Desativa a verificação de SSL
+        ]);
+    
         $response = $client->post($url, [
             'headers' => [
                 'MerchantId' => $this->merchantId,
@@ -37,11 +40,8 @@ abstract class Config
             ],
             'json' => $data,
         ]);
-
-        if ($response->getStatusCode() !== 200) {
-            throw new \Exception('Erro ao comunicar com a API da Cielo.');
-        }
-
+    
         return json_decode($response->getBody()->getContents(), true);
     }
+    
 }
